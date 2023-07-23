@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ restaurant.name }}</h1>
+    <p>Address: {{ restaurant.address }}</p>
+    <p>Average rating: {{ restaurant.avg_rating|default:"N/A" }}</p>
+
+    <h2>Ratings</h2>
+    {% if ratings %}
+        <ul>
+        {% for rating in ratings %}
+            <li>{{ rating.user.username }} rated {{ rating.value }} stars on {{ rating.created_at|date:"F j, Y, g:i a" }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No ratings yet.</p>
+    {% endif %}
+
+    <h2>Submit a rating</h2>
+    {% if user.is_authenticated %}
+        <form method="post" action="{% url 'restaurant_rating' restaurant.id %}">
+            {% csrf_token %}
+            <label for="value">Rating:</label>
+            <select name="value" id="value">
+                <option value="1">1 star</option>
+                <option value="2">2 stars</option>
+                <option value="3">3 stars</option>
+                <option value="4">4 stars</option>
+                <option value="5">5 stars</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+    {% else %}
+        <p>You must <a href="{% url 'login' %}">log in</a> or <a href="{% url 'signup' %}">sign up</a>  to submit a rating.</p>
+    {% endif %}
+{% endblock %}

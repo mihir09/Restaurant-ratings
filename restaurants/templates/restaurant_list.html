@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="display-4">Restaurants</h1>
+    <ul class="list-group">
+    {% for restaurant in restaurants %}
+        <li class="list-group-item"><a href="{% url 'restaurant_detail' restaurant.id %}">{{ restaurant.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}

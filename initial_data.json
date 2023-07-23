@@ -1,0 +1,38 @@
+[
+  {
+    "fields":
+    {
+      "name": "Raising Cane's Chicken Fingers",
+      "address": "1527 S University Dr, Fort Worth, TX 76107",
+      "latitude": 32.729040,
+      "longitude": -97.360870,
+      "avg_rating": 5
+    },
+    "model": "restaurants.Restaurant",
+    "pk": 1
+  },
+    {
+    "fields":
+    {
+      "name": "Shake Shack Westbend",
+      "address": "1601 S University Dr, Fort Worth, TX 76107",
+      "latitude": 32.72795,
+      "longitude": -97.36082,
+      "avg_rating": 5
+    },
+    "model": "restaurants.Restaurant",
+    "pk": 2
+  },
+    {
+    "fields":
+    {
+      "name": "IHOP",
+      "address": "1664 S University Dr, Fort Worth, TX 76107",
+      "latitude": 32.726618,
+      "longitude": -97.361378,
+      "avg_rating": 5
+    },
+    "model": "restaurants.Restaurant",
+    "pk": 3
+  }
+]
